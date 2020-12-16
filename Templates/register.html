@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+	<head>
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/header_style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/global_styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/form_styles.css' %}">
+		<link rel="stylesheet" href="{% static 'css/register_style.css' %}">
+	</head>
+	<body>
+        <header>
+			<a href="./">
+				<div id="cd-logo">
+					<img src="{% static 'img/ic_logo.svg' %}" alt="Logo" />
+					<p>LIBRARY</p>
+				</div>
+			</a>
+		</header>
+		<form class="cd-form" method="POST" action="memberhome">
+            {% csrf_token %}
+			<legend>Enter your details</legend>
+			
+				<div class="error-message" id="error-message">
+					<p id="error"></p>
+				</div>
+				
+				<div class="icon">
+					<input class="m-user" type="text" name="m_user" id="m_user" placeholder="Username" required />
+				</div>
+				
+				<div class="icon">
+					<input class="m-pass" type="password" name="m_pass" placeholder="Password" required />
+				</div>
+				
+				<div class="icon">
+					<input class="m-name" type="text" name="m_name" placeholder="Full Name" required />
+				</div>
+				
+				<div class="icon">
+					<input class="m-email" type="email" name="m_email" id="m_email" placeholder="Email" required />
+				</div>
+				
+				<div class="icon">
+					<input class="m-balance" type="number" name="m_balance" id="m_balance" placeholder="Initial Balance" required />
+				</div>
+				
+				<br />
+				<input type="submit" name="m_register" value="Register" />
+		</form>
+	</body>

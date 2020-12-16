@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+	<head>
+        <title>Welcome</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/header_style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/global_styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/home_style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/custom_radio_button_style.css' %}">
+	</head>
+	<body>	
+        <header>
+			<a href="./">
+				<div id="cd-logo">
+					<img src="{% static 'img/ic_logo.svg' %}" alt="Logo" />
+                    <p>LIBRARY</p>
+                    <a  href="/form" ><p>Log out</p></a>
+				</div>
+            </a>
+        </header>
+			<form class='cd-form' method='POST' action='#'>
+                {% csrf_token %}
+                <legend>Available books</legend>
+                <div >
+                    <font size="100">Welcome to Library  </font>
+                </div>
+				<div class='error-message' id='error-message'>
+						<p id='error'></p>
+					</div>
+				<table width='100%' cellpadding=10 cellspacing=10>
+				<tr>
+						<th></th>
+						<th>ISBN<hr></th>
+						<th>Title<hr></th>
+						<th>Author<hr></th>
+						<th>Category<hr></th>
+						<th>Price<hr></th>
+						<th>Copies available<hr></th>
+					</tr>
+				
+				</table>
+				<br /><br /><input type='submit' name='m_request' value='Request book' />
+			</form>
+	</body>
+</html>

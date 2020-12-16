@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+	<head>
+        <title>Librarian Login</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/header_style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static '/css/global_styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static '/css/form_styles.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css' %}">
+	</head>
+	<body>
+        <header>
+			<a href="./">
+				<div id="cd-logo">
+					<img src="{% static 'img/ic_logo.svg' %}" alt="Logo" />
+					<p>LIBRARY</p>
+				</div>
+			</a>
+		</header>
+		<form class="cd-form" method="POST" action="libraryhome">
+        {% csrf_token %}
+		<legend>Librarian Login</legend>
+		
+			<div class="error-message" id="error-message">
+				<p id="error"></p>
+			</div>
+			
+			<div class="icon">
+				<input class="l-user" type="text" name="l_user"  id="id_username" placeholder="Username" required />
+			</div>
+			
+			<div class="icon" >
+				<input class="l-pass" type="password" name="l_pass" id="id_password" placeholder="Password" required />
+			</div>
+			
+			<input type="submit" value="Login" name="l_login"/>
+			
+		</form>
+	</body>

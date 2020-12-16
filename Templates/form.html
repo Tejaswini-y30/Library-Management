@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+	<head>
+        <title id="t1">Library</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/header_style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css' %}" />
+	</head>
+	<body>
+        <header>
+			<a href="./">
+				<div id="cd-logo">
+					<img src="{% static 'img/ic_logo.svg' %}" alt="Logo" />
+					<p>LIBRARY</p>
+				</div>
+			</a>
+		</header>
+		<div id="allTheThings">
+			<div id="member">
+				<a href="/memberlog" value="member">
+					<img src="{% static 'img/ic_member.svg' %}" width="250px" height="auto"/><br />
+					Member
+				</a>
+			</div>
+			<div id="verticalLine">
+				<div id="librarian">
+					<a id="librarian-link" href="/librarylog" value="library" >
+						<img src="{% static 'img/ic_librarian.svg' %}" width="250px" height="auto" /><br />
+						Librarian
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
